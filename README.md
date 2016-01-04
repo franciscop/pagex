@@ -1,6 +1,6 @@
 # pagex
 
-A simple regex routing for your pages
+A simple regex routing for your pages. It loads the script only when the DOM is ready.
 
 ```js
 // Starts by a string
