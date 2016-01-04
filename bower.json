@@ -1,0 +1,23 @@
+{
+  "name": "pagex",
+  "homepage": "https://github.com/franciscop/pagex",
+  "authors": [
+    "FranciscoP <developerfrancisco@hotmail.com>"
+  ],
+  "description": "Simple routing through ajax",
+  "main": "pagex.js",
+  "moduleType": [],
+  "keywords": [
+    "route",
+    "routing",
+    "regex",
+    "page",
+    "load"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ]
+}
