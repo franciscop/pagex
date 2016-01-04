@@ -8,7 +8,12 @@ pagex(/^user/, function(){
   console.log("User section loaded");
 });
 
-// Specific page
+// When NOT in this page (since negating in regex is complex)
+pagex(/^user/, true, function(){
+  console.log("User index");
+});
+
+// Strict page
 pagex(/^user$/, function(){
   console.log("User index");
 });
