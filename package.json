@@ -1,0 +1,28 @@
+{
+  "name": "pagex",
+  "version": "1.0.0",
+  "description": "A super simple front-end page manager",
+  "main": "pagex.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/franciscop/pagex.git"
+  },
+  "author": "Francisco Presencia Fandos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/franciscop/pagex/issues"
+  },
+  "homepage": "https://github.com/franciscop/pagex#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-bytesize": "^0.2.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-mocha-phantomjs": "^3.0.0",
+    "grunt-semistandard": "^1.0.6"
+  }
+}
