@@ -20,12 +20,14 @@ If you have a large javascript codebase, you can split it the following way:
 // Logic for all your pages. For example, analytics
 analytics();
 
+// Logic specific for your /users page and subpages
 pagex('/users', function(){
-  // Logic specific for your /users page and subpages
+  // ...
 });
 
+// Logic specific for your /books page and subpages
 pagex('/books', function(){
-  // Logic specific for your /books page and subpages
+  // ...
 });
 ```
 
