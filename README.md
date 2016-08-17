@@ -8,9 +8,26 @@ A simple front-end routing for your pages. It loads the script only when the DOM
 pagex(path, [negate?], callback);
 ```
 
-- path: the path or regex to be matched against the current url
+- [path](#path): the path or regex to be matched against the current url
 - negate (optional): set to true to call the function if NOT in this path. Really useful for the difficulty to do so otherwise
 - callback: the callback to call if the path matches (or if it doesn't and it's negated)
+
+## Pseudo Example
+
+If you have a large javascript codebase, you can split it the following way:
+
+```js
+// Logic for all your pages. For example, analytics
+analytics();
+
+pagex('/users', function(){
+  // Logic specific for your /users page and subpages
+});
+
+pagex('/books', function(){
+  // Logic specific for your /books page and subpages
+});
+```
 
 
 ## Path
