@@ -122,12 +122,24 @@ describe("Paths", function(){
     pagex('/abc', false, function(){
       done();
     }, '/test/abc');
+    pagex.base = false;
   });
 
   it("Works with base ending with slash", function (done) {
     pagex.base = '/test/';
-    pagex('/abc', false, function(){
+    pagex('/abc', false, function () {
       done();
     }, '/test/abc');
+    pagex.base = false;
+  });
+
+  it("Can reset params", function (done) {
+    pagex.base = '/test/';
+    pagex('/abc', false, function () {
+    }, '/test/abc');
+    pagex.base = false;
+    pagex('/aaa', false, function () {
+      done();
+    }, '/aaa');
   });
 });
