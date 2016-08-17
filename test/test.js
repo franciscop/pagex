@@ -102,6 +102,13 @@ describe("Paths", function(){
     }, '/users/42');
   });
 
+  it("optional parameter is undefined if not there", function(done) {
+    pagex('/users/:id?', false, function (id) {
+      expect(id).to.equal(undefined);
+      done();
+    }, '/users');
+  });
+
   it("can load recursively", function(done) {
     pagex('/test', false, function () {
       pagex('/test', false, function(){
