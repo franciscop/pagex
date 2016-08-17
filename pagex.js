@@ -32,10 +32,10 @@ var pagex = function (path, negate, callback, url) {
         cb.call(self);
       });
 
-      var ret = callback.apply(self, params);
+      callback.apply(self, params);
 
       pagex.events.after.forEach(function (cb) {
-        cb.call(pagex, ret || self.exports);
+        cb.call(self, self.exports);
       });
     }
   };
