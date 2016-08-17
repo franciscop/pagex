@@ -1,4 +1,4 @@
-# pagex [![Circle CI](https://circleci.com/gh/franciscop/pagex/tree/master.svg?style=shield)](https://circleci.com/gh/franciscop/pagex/tree/master) [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/Flet/semistandard) [!](https://img.shields.io/badge/size-1.8kb-brightgreen.svg) [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/franciscop/pagex/blob/master/LICENSE)
+# pagex [![Circle CI](https://circleci.com/gh/franciscop/pagex/tree/master.svg?style=shield)](https://circleci.com/gh/franciscop/pagex/tree/master) [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/Flet/semistandard) ![Size Shield](https://img.shields.io/badge/size-1.8kb-brightgreen.svg) [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/franciscop/pagex/blob/master/LICENSE)
 
 A simple front-end routing for your pages. It loads the script only when the DOM is ready. It can handle both Regex and paths
 
