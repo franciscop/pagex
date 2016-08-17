@@ -1,4 +1,4 @@
-# pagex
+# pagex [![Circle CI](https://circleci.com/gh/umbrellajs/umbrella/tree/master.svg?style=shield)](https://circleci.com/gh/franciscop/pagex/tree/master) [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/Flet/semistandard) [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/umbrellajs/umbrella/blob/master/LICENSE)
 
 A simple front-end routing for your pages. It loads the script only when the DOM is ready. It can handle both Regex and paths
 
@@ -36,7 +36,7 @@ Make them optional:
 ```js
 // Note: ES6 default parameter shown here
 pagex('/users/:username?', function(username = 'everyone'){
-  alert('Hi there' + username + '!');
+  alert('Hi there ' + username + '!');
 });
 ```
 
