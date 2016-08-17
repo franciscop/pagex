@@ -123,4 +123,11 @@ describe("Paths", function(){
       done();
     }, '/test/abc');
   });
+
+  it("Works with base ending with slash", function (done) {
+    pagex.base = '/test/';
+    pagex('/abc', false, function(){
+      done();
+    }, '/test/abc');
+  });
 });
