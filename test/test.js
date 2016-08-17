@@ -42,6 +42,41 @@ describe("Regex", function(){
       }, '/test');
     }, '/test');
   });
+
+  it("can export variables async", function (done) {
+    pagex.after(function(actions){
+      if (actions.done) {
+        actions.done();
+      }
+    });
+    pagex(/test/, false, function () {
+      this.exports.done = done;
+    });
+  });
+
+  it("can use exported async variable", function (done) {
+    pagex(/test/, false, function () {
+      this.exports.done = done;
+    });
+  });
+
+  it("can export data before", function (done) {
+    pagex.before(function(){
+      this.exports.user = 'pepe';
+    });
+    pagex.after(function(actions){
+      if (actions.checkUser) {
+        actions.checkUser();
+      }
+    });
+    pagex(/^\/haspepe/, false, function () {
+      expect(this.exports.user).to.equal('pepe');
+      this.exports.checkUser = function(){
+        expect(this.user).to.equal('pepe');
+        done();
+      }
+    }, '/haspepe');
+  });
 });
 
 
@@ -73,5 +108,19 @@ describe("Paths", function(){
         done();
       }, '/test');
     }, '/test');
+  });
+
+  it("Works with base", function (done) {
+    pagex.base = '/test';
+    pagex('/abc', false, function(){
+      done();
+    }, '/test/abc');
+  });
+
+  it("Works with base ending with slash", function (done) {
+    pagex.base = '/test/';
+    pagex('/abc', false, function(){
+      done();
+    }, '/test/abc');
   });
 });
