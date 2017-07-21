@@ -1,6 +1,6 @@
 {
   "name": "pagex",
-  "version": "2.2.2",
+  "version": "2.3.0",
   "description": "A super simple front-end page manager",
   "main": "pagex.js",
   "scripts": {
