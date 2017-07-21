@@ -6,6 +6,10 @@ describe("pagex()", function() {
     expect(!!pagex).to.equal(true);
   });
 
+  it("should be exported", function() {
+    expect(!!module.exports.pagex).to.equal(true);
+  });
+
   it("can handle fake urls", function(done) {
     pagex(/hi/, false, done, '/hi');
   });

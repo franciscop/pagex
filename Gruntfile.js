@@ -51,7 +51,7 @@ module.exports = function (grunt) {
     concat: {
       main: {
         files: {
-          'pagex.js': ['src/isarray.js', 'src/pagex.js', 'src/pathtoregex.js']
+          'pagex.js': ['src/pagex.js', 'src/pathtoregex.js', 'src/export.js']
         }
       }
     },
