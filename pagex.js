@@ -1,22 +1,16 @@
 import toregex from 'path-to-regexp';
 
+const is = val => arg => typeof arg === val;
+
 // PageX
 // A minimal engine for loading only page-specific code with regex or paths
-export default (reg, negate, callback, url = window.location.pathname) => {
-  // Allow it to have different signatures
-  if (!callback) {
-    callback = negate;
-    negate = false;
-  }
-
-  if (!callback) {
-    callback = (...args) => args;
-  }
-
+export default (reg, ...args) => {
   if (typeof reg === 'string') {
-    if (reg === '*') reg = '(.*)';
-    reg = toregex(reg);
+    reg = toregex(reg === '*' ? '(.*)' : reg);
   }
+  const negate = args.find(is('boolean')) || false;
+  const callback = args.find(is('function')) || ((...args) => args);
+  const url = args.find(is('string')) || window.location.pathname;
 
   // Check whether we are in the correct page or not
   if (reg.test(url) === negate) return false;
