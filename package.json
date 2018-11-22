@@ -1,6 +1,6 @@
 {
   "name": "pagex",
-  "version": "2.3.0",
+  "version": "3.0.0",
   "description": "A super simple front-end router",
   "main": "pagex.js",
   "scripts": {
