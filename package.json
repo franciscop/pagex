@@ -2,33 +2,10 @@
   "name": "pagex",
   "version": "3.0.0",
   "description": "A super simple front-end router",
-  "main": "pagex.js",
-  "scripts": {
-    "build": "rollup -c | uglifyjs -o pagex.min.js",
-    "pretest": "npm run build",
-    "test": "jest --coverage --collectCoverageFrom=pagex.js --detectOpenHandles --runInBand",
-    "gzip": "gzip -c pagex.min.js | wc -c && echo 'bytes' # Only for Unix",
-    "lint": "oxlint pagex.js"
-  },
   "repository": "github:franciscop/pagex",
   "author": "Francisco Presencia <public@francisco.io> (https://francisco.io/)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/franciscop/pagex/issues"
-  },
-  "homepage": "https://github.com/franciscop/pagex#readme",
-  "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-jest": "^21.2.0",
-    "babel-preset-env": "^1.6.1",
-    "oxlint": "^1.89.0",
-    "path-to-regexp": "^2.4.0",
-    "rollup": "^0.50.0",
-    "rollup-plugin-commonjs": "8.3.0",
-    "rollup-plugin-node-resolve": "^3.4.0",
-    "uglify-es": "^3.1.3"
-  },
   "funding": "https://www.paypal.me/franciscopresencia/19",
+  "license": "MIT",
   "keywords": [
     "router",
     "routing",
@@ -37,8 +14,27 @@
     "pages",
     "spa"
   ],
+  "scripts": {
+    "build": "rollup -c | uglifyjs -o pagex.min.js",
+    "pretest": "npm run build",
+    "start": "vitest",
+    "test": "vitest run --coverage",
+    "gzip": "gzip -c pagex.min.js | wc -c && echo 'bytes' # Only for Unix",
+    "lint": "oxlint pagex.js"
+  },
+  "main": "pagex.js",
   "files": [
     "pagex.js",
     "pagex.min.js"
-  ]
+  ],
+  "devDependencies": {
+    "@vitest/coverage-v8": "^5.0.5",
+    "oxlint": "^1.89.0",
+    "path-to-regexp": "^2.4.0",
+    "rollup": "^0.50.0",
+    "rollup-plugin-commonjs": "8.3.0",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "uglify-es": "^3.1.3",
+    "vitest": "^5.0.5"
+  }
 }

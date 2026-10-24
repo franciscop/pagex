@@ -1,4 +1,4 @@
-# pagex [![npm install pagex](https://img.shields.io/badge/npm%20install-pagex-blue.svg)](https://www.npmjs.com/package/pagex) [![gzip size](https://img.badgesize.io/franciscop/pagex/master/pagex.min.js.svg?compression=gzip)](https://github.com/franciscop/pagex/blob/master/pagex.min.js) [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/franciscop/pagex/blob/master/LICENSE)
+# pagex [![npm install pagex](https://img.shields.io/badge/npm%20install-pagex-blue.svg)](https://www.npmjs.com/package/pagex) [![tests](https://github.com/franciscop/pagex/workflows/tests/badge.svg)](https://github.com/franciscop/pagex/actions) [![gzip size](https://img.badgesize.io/franciscop/pagex/master/pagex.min.js.svg?compression=gzip)](https://github.com/franciscop/pagex/blob/master/pagex.min.js)
 
 :page_facing_up: A simple router for the browser in Javascript. It works with RegExp and Paths:
 

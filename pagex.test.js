@@ -1,3 +1,4 @@
+import { describe, expect, it, vi } from 'vitest';
 import pagex from './pagex';
 
 // Testing the main file
@@ -7,7 +8,7 @@ describe("pagex()", () => {
   });
 
   it("can handle fake urls", () => {
-    const cb = jest.fn();
+    const cb = vi.fn();
     pagex(/hi/, false, cb, '/hi');
     expect(cb).toBeCalled();
   });
@@ -17,43 +18,43 @@ describe("pagex()", () => {
 
 describe("Regex", () => {
   it("can handle a simple regex", () => {
-    const cb = jest.fn();
+    const cb = vi.fn();
     pagex(/./, false, cb, '/');
     expect(cb).toBeCalled();
   });
 
   it('can match a path', () => {
-    const cb = jest.fn();
+    const cb = vi.fn();
     pagex(/^\/hello/, false, cb, '/hello');
     expect(cb).toBeCalled();
   });
 
   it('will not match strict paths', () => {
-    const cb = jest.fn();
+    const cb = vi.fn();
     pagex(/^\/hello$/, false, cb, '/hello/world');
     expect(cb).not.toBeCalled();
   });
 
   it('can match a partial path if RegExp is right', () => {
-    const cb = jest.fn();
+    const cb = vi.fn();
     pagex(/^\/hello/, false, cb, '/hello/world');
     expect(cb).toBeCalled();
   });
 
   it('will ignore unmatched paths', () => {
-    const cb = jest.fn();
+    const cb = vi.fn();
     pagex(/^\/hello/, false, cb, '/world');
     expect(cb).not.toBeCalled();
   });
 
   it('can negate a path', () => {
-    const cb = jest.fn();
+    const cb = vi.fn();
     pagex(/^\/hello/, true, cb, '/hello');
     expect(cb).not.toBeCalled();
   });
 
   it('can negate a path', () => {
-    const cb = jest.fn();
+    const cb = vi.fn();
     pagex(/^\/bye/, true, cb, '/hello');
     expect(cb).toBeCalled();
   });
@@ -69,7 +70,7 @@ describe("Regex", () => {
   });
 
   it("can load recursively", () => {
-    const cb = jest.fn();
+    const cb = vi.fn();
     pagex(/test/, false, () => pagex(/test/, false, cb, '/test'), '/test');
     expect(cb).toBeCalled();
   });
@@ -79,25 +80,25 @@ describe("Regex", () => {
 
 describe("Paths", () => {
   it("can handle a simple path", () => {
-    const cb = jest.fn();
+    const cb = vi.fn();
     pagex('*', false, cb, '/');
     expect(cb).toBeCalled();
   });
 
   it('can match a path', () => {
-    const cb = jest.fn();
+    const cb = vi.fn();
     pagex('/hello', false, cb, '/hello');
     expect(cb).toBeCalled();
   });
 
   it('is strict with what it matches', () => {
-    const cb = jest.fn();
+    const cb = vi.fn();
     pagex('/hello', false, cb, '/hello/world');
     expect(cb).not.toBeCalled();
   });
 
   it('will ignore unmatched paths', () => {
-    const cb = jest.fn();
+    const cb = vi.fn();
     pagex('/hello', false, cb, '/world');
     expect(cb).not.toBeCalled();
   });
@@ -119,7 +120,7 @@ describe("Paths", () => {
   });
 
   it("can load recursively", () => {
-    const cb = jest.fn();
+    const cb = vi.fn();
     pagex('/test', false, () => pagex('/test', false, cb, '/test'), '/test');
     expect(cb).toBeCalled();
   });
