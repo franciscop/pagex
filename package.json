@@ -15,26 +15,21 @@
     "spa"
   ],
   "scripts": {
-    "build": "rollup -c | uglifyjs -o pagex.min.js",
-    "pretest": "npm run build",
     "start": "vitest",
     "test": "vitest run --coverage",
-    "gzip": "gzip -c pagex.min.js | wc -c && echo 'bytes' # Only for Unix",
     "lint": "oxlint pagex.js"
   },
   "main": "pagex.js",
+  "type": "module",
   "files": [
-    "pagex.js",
-    "pagex.min.js"
+    "pagex.js"
   ],
+  "dependencies": {
+    "path-to-regexp": "^2.4.0"
+  },
   "devDependencies": {
     "@vitest/coverage-v8": "^5.0.5",
     "oxlint": "^1.89.0",
-    "path-to-regexp": "^2.4.0",
-    "rollup": "^0.50.0",
-    "rollup-plugin-commonjs": "8.3.0",
-    "rollup-plugin-node-resolve": "^3.4.0",
-    "uglify-es": "^3.1.3",
     "vitest": "^5.0.5"
   }
 }
